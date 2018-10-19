@@ -9,17 +9,14 @@
 </template>
 
 <script>
-import { getCode } from '../service/home.service'
+import { getCode } from '../service/director.service'
 export default {
     data(){
         return {
-            title:'首页'
+            title:'主管'
         }
     },
     mounted () {
-        getCode('13819457176').then((res) => {
-            console.log(res);
-        })
     }
 }
 </script>
