@@ -30,5 +30,6 @@ export default[
         component: settingContainer,
         name: '设置'
     },
+    {path: '/',redirect: '/home'},
     {path:'*',component: NoFindContainer}
 ]

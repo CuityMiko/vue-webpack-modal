@@ -5,11 +5,11 @@
 <template>
     <div>
         {{title}}
+        <a href="javascript:;" class="button" @click="saveIamge">我的邀请码</a>
     </div>
 </template>
 
 <script>
-import { getCode } from '../service/home.service'
 export default {
     data(){
         return {
@@ -17,9 +17,20 @@ export default {
         }
     },
     mounted () {
-        getCode('13819457176').then((res) => {
-            console.log(res);
-        })
+    },
+    methods: {
+        onPlusReady(e) {
+            console.log(e);
+        },
+        saveIamge() {
+            dd.biz.util.previewImage({
+                urls: ['http://img.alicdn.com/tps/i3/TB1kt4wHVXXXXb_XVXX0HY8HXXX-1024-1024.jpeg'],
+                current: 'http://img.alicdn.com/tps/i3/TB1kt4wHVXXXXb_XVXX0HY8HXXX-1024-1024.jpeg',
+                onSuccess : function(result) {
+                },
+                onFail : function(err) {}
+            })
+        }
     }
 }
 </script>

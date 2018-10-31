@@ -2,8 +2,8 @@
     .container{
         color: #696969;
         font-size: 14px;
-        border: 1px solid #ccc;
-        padding: 9px;
+        /*border: 1px solid #ccc;*/
+        /*padding: 9px;*/
     }
 </style>
 

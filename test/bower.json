@@ -1,8 +1,0 @@
-{
-  "name": "meeting-signin-frontend",
-  "version": "1.0.0",
-  "description": "会场签到前端",
-  "license": "ISC",
-  "dependencies": {
-  }
-}

@@ -7,6 +7,7 @@ const service = axios.create({
 
 // request拦截器
 service.interceptors.request.use(config => {
+  $.showIndicator();
   return config
 }, error => {
   return Promise.reject(error);
@@ -15,9 +16,11 @@ service.interceptors.request.use(config => {
 // respone拦截器
 service.interceptors.response.use(
   response => {
+    $.hideIndicator()
     return response.data
   },
   error => {
+    $.hideIndicator()
     return Promise.reject(error)
   }
 )

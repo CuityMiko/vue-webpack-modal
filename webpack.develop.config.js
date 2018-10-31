@@ -40,7 +40,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: 'style!css!sass!scss'
+                loader: 'style!css!sass'
             },
             {
                 test: /.*\.(gif|png|jpe?g|svg|pdf|docx)$/i,
@@ -73,14 +73,19 @@ module.exports = {
     devServer: { // 代理 处理跨域
         historyApiFallback: true,
         hot: true,
-        inline: true,
         progress: true,
+        inline: true, //实时刷新
+        host: siteConfig.host, //本机的局域网ip
+        open: true, //是否运行成功后直接打开页面
         port: siteConfig.port, //设置端口号
         proxy: {
-            '/h5/*': {
+            '/api/*': {
                 target: siteConfig.target,
                 secure: false,
-                changeOrigin: true
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': ''
+                }
             }
         }
 
